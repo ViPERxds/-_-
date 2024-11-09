@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2ecc71;
+    --accent-color: #3498db;
+    --gradient-1: linear-gradient(135deg, #2ecc71, #3498db);
+    --gradient-2: linear-gradient(135deg, #3498db, #2ecc71);
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --purple-dark: #2c1f4a;
+    --purple-light: #4a2b7d;
+    --neon-purple: #9d4edd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background: linear-gradient(
+        45deg,
+        var(--purple-dark),
+        var(--purple-light),
+        var(--purple-dark)
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(157, 78, 221, 0.1),
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, 
+        rgba(74, 43, 125, 0.9), 
+        rgba(44, 31, 74, 0.9)
+    );
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    border-bottom: 4px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.2) 25%, transparent 25%);
+    background-size: 3px 3px;
+    animation: backgroundMove 20s linear infinite;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+}
+
+section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    text-align: left;
+    padding: 2rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    background: white;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-1);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.3);
+}
+
+.service-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: #666;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.social-link:hover {
+    color: var(--neon-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(157, 78, 221, 0.4);
+}
+
+@keyframes backgroundMove {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+} 
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    width: 100%;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--neon-purple), 
+        var(--purple-light)
+    );
+    border-radius: 5px;
+    transition: width 1s ease;
+    animation: progressAnimation 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.3);
+}
+
+.project-image {
+    height: 150px;
+    background: var(--gradient-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image i {
+    font-size: 3rem;
+    color: white;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--secondary-color);
+}
+
+@keyframes progressAnimation {
+    from { width: 0; }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Добавляем новые стили к существующим */
+
+/* Частицы */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Плавающая навигация */
+.floating-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.nav-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--neon-purple);
+}
+
+.nav-item.active {
+    background: var(--neon-purple);
+    color: white;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+}
+
+.nav-item:hover {
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .floating-nav {
+        bottom: 20px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        padding: 10px 20px;
+    }
+    
+    .nav-item {
+        margin: 0 10px;
+    }
+    
+    .nav-item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Бейджи технологий */
+.tech-badge {
+    background: rgba(157, 78, 221, 0.1);
+    color: var(--neon-purple);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(157, 78, 221, 0.2);
+}
+
+/* Статистика */
+.about-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--neon-purple);
+    display: block;
+}
+
+/* Иконки навыков */
+.skill-category {
+    margin: 20px 0;
+}
+
+.skill-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.skill-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+}
+
+/* Форма контактов */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.send-button {
+    background: var(--gradient-1);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    position: relative;
+    min-width: 160px;
+    height: 50px;
+}
+
+.send-button span {
+    margin-right: 25px;
+}
+
+.send-button i {
+    position: relative;
+    margin-left: -20px;
+}
+
+.send-button.sending span {
+    opacity: 0;
+}
+
+.send-button.sending i {
+    animation: fly 1s ease forwards;
+}
+
+.send-button.sent {
+    background: var(--secondary-color);
+}
+
+.send-button.sent span,
+.send-button.sent i {
+    display: none;
+}
+
+.send-button.sent::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    animation: appear 0.3s ease forwards;
+}
+
+@keyframes fly {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    50% { 
+        transform: translate(50px, -50px);
+        opacity: 0;
+    }
+    100% { 
+        transform: translate(50px, -50px);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% { transform: scale(0) }
+    100% { transform: scale(1) }
+}
+
+/* Анимации */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.glitch-text:hover {
+    animation: glitch 0.3s linear infinite;
+}
+
+/* Дополнительные эффекты */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.section-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-1);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .floating-nav {
+        bottom: 20px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        padding: 10px 20px;
+    }
+    
+    .nav-item {
+        margin: 0 10px;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Добавляем новые стили для иконок навыков */
+.skill-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover .skill-img {
+    filter: grayscale(0%);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.skill-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--neon-purple);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.skill-icon:hover::after {
+    opacity: 1;
+    bottom: -40px;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 30px;
+}
+
+.skill-category h4 {
+    color: var(--neon-purple);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-category h4::before {
+    content: '⚡';
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Анимация для иконок */
+.skill-icon i {
+    font-size: 2rem;
+    color: var(--neon-purple);
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover i {
+    transform: scale(1.2);
+}
+
+/* Добавляем медиа-запрос для адаптивности */
+@media (max-width: 768px) {
+    .skill-icons {
+        gap: 15px;
+    }
+    
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .skill-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Добавляем стили для секции достижений */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.achievement-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(157, 78, 221, 0.2);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: var(--neon-purple);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.achievement-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.achievement-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--neon-purple);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Стили для отзывов */
+.testimonials-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-content i {
+    font-size: 2rem;
+    color: var(--neon-purple);
+    opacity: 0.2;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.testimonial-content p {
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.author-info span {
+    color: var(--neon-purple);
+    font-size: 0.9rem;
+}
+
+/* Анимация для счетчика статистики */
+.stat-number {
+    animation: countUp 2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Добавляем эффект свечения для карточек при наведении */
+.tech-card::before,
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(45deg, transparent, rgba(157, 78, 221, 0.1), transparent);
+    z-index: -1;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.tech-card:hover::before,
+.testimonial-card:hover::before {
+    opacity: 1;
+}

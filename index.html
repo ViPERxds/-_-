@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controll</title>
+    <link rel="icon" type="image/png" href="img/controll.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Добавляем частицы -->
+    <div id="particles-js"></div>
+
+    <nav class="floating-nav">
+        <div class="nav-item active" data-section="header"><i class="fas fa-home"></i></div>
+        <div class="nav-item" data-section="about"><i class="fas fa-user"></i></div>
+        <div class="nav-item" data-section="skills"><i class="fas fa-code"></i></div>
+        <div class="nav-item" data-section="contact"><i class="fas fa-envelope"></i></div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="profile" data-aos="fade-down">
+                <div class="profile-image">
+                    <img src="https://via.placeholder.com/150" alt="Александр Исаков">
+                </div>
+                <h1 class="glitch-text">Александр Исаков</h1>
+                <h2 class="typing-text">controll</h2>
+                <p class="tagline">Full-stack разработчик | Software Engineer</p>
+                <div class="header-badges">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="about" data-aos="fade-up">
+            <div class="section-header">
+                <span class="section-icon"><i class="fas fa-user-astronaut"></i></span>
+                <h3>Обо мне</h3>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Привет! Я профессиональный разработчик программного обеспечения с глубокими знаниями в области веб-технологий. Специализируюсь на создании высоконагруженных приложений и оптимизации производительности.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Лет опыта</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Проектов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Клиентов</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" data-aos="fade-up">
+            <div class="section-header">
+                <span class="section-icon"><i class="fas fa-laptop-code"></i></span>
+                <h3>Технический стек</h3>
+            </div>
+            <div class="skills-container">
+                <!-- Существующие скиллы -->
+                <!-- Добавляем новые скиллы с иконками -->
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <div class="skill-icons">
+                        <div class="skill-icon" data-tooltip="HTML5">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="CSS3">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="JavaScript">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="React">
+                            <i class="fab fa-react"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Добавляем после существующей skill-category с Frontend -->
+                <div class="skill-category">
+                    <h4>Backend & Python</h4>
+                    <div class="skill-icons">
+                        <div class="skill-icon" data-tooltip="Python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="Django">
+                            <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" class="skill-img">
+                        </div>
+                        <div class="skill-icon" data-tooltip="FastAPI">
+                            <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI" class="skill-img">
+                        </div>
+                        <div class="skill-icon" data-tooltip="PostgreSQL">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>DevOps & Tools</h4>
+                    <div class="skill-icons">
+                        <div class="skill-icon" data-tooltip="Docker">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="Git">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="Linux">
+                            <i class="fab fa-linux"></i>
+                        </div>
+                        <div class="skill-icon" data-tooltip="AWS">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Добавляем секцию с отзывами -->
+        <section class="testimonials" data-aos="fade-up">
+            <div class="section-header">
+                <span class="section-icon"><i class="fas fa-comments"></i></span>
+                <h3>Отзывы клиентов</h3>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card" data-aos="fade-right">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Отличный специалист! Быстро и качественно выполнил поставленную задачу. Рекомендую!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Андрей К.</h4>
+                            <span>CEO, Tech Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-right" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Профессиональный подход к работе. Всегда на связи и готов помочь с любыми вопросами.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Мария С.</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements" data-aos="fade-up">
+            <div class="section-header">
+                <span class="section-icon"><i class="fas fa-trophy"></i></span>
+                <h3>Мои достижения</h3>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="flip-left">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h4>Fullstack Developer</h4>
+                        <p>Сертификат о прохождении курса по полному стеку веб-разработки, включая React и Node.js</p>
+                        <div class="achievement-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-card" data-aos="flip-left">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h4>Python Advanced</h4>
+                        <p>Сертификат о глубоком изучении Python, включая Django, FastAPI и работу с базами данных</p>
+                        <div class="achievement-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-card" data-aos="flip-left">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h4>Алгоритмы и структуры данных</h4>
+                        <p>Сертификат о прохождении курса по алгоритмам и структурам данных, включая практические задачи</p>
+                        <div class="achievement-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" data-aos="fade-up">
+            <div class="section-header">
+                <span class="section-icon"><i class="fas fa-paper-plane"></i></span>
+                <h3>Связаться со мной</h3>
+            </div>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Ваше имя" class="input-field" required>
+                    <input type="text" placeholder="Ваш Telegram" class="input-field" required>
+                    <textarea placeholder="Ваше сообщение" class="input-field" required></textarea>
+                    <button type="submit" class="send-button">
+                        <span>Отправить</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Добавляем необходимые скрипты -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
