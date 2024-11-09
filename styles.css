@@ -857,3 +857,290 @@ h3 {
 .testimonial-card:hover::before {
     opacity: 1;
 }
+
+/* Добавляем медиа-запросы для адаптивности */
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .container {
+    width: 95%;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0.25rem;
+  }
+  
+  .container {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Обновляем медиа-запросы для лучшей адаптивности */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .skills-container {
+        gap: 1rem;
+    }
+
+    .achievements-grid,
+    .testimonials-slider {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    header {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin: 0.5rem 0;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .header-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .tech-badge {
+        font-size: 0.9rem;
+        padding: 5px 12px;
+    }
+
+    .achievements-grid,
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skill-category {
+        padding: 15px;
+        margin-bottom: 1rem;
+    }
+
+    .skill-icons {
+        gap: 12px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-stats {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .stat-item {
+        width: calc(50% - 1rem);
+        text-align: center;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .floating-nav {
+        position: fixed;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 8px 15px;
+        border-radius: 25px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .nav-item {
+        margin: 0 8px;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .input-field {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .tech-badge {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+
+    .stat-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .skill-icon i {
+        font-size: 1.2rem;
+    }
+
+    .section-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .about-content p {
+        font-size: 0.9rem;
+    }
+
+    .achievement-card,
+    .testimonial-card {
+        padding: 1rem;
+    }
+
+    .send-button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .profile-image img {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .skill-icons {
+        gap: 8px;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-item {
+        width: 32px;
+        height: 32px;
+        margin: 0 5px;
+    }
+
+    .floating-nav {
+        padding: 6px 10px;
+    }
+
+    .section {
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* Исправляем отображение плавающей навигации на мобильных устройствах */
+@media screen and (max-width: 768px) {
+    .floating-nav {
+        position: fixed;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 8px 15px;
+        border-radius: 25px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+}
