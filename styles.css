@@ -38,22 +38,21 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     z-index: 2;
 }
 
 header {
     text-align: center;
-    padding: 4rem 0;
+    padding: 2rem 1rem;
     background: linear-gradient(135deg, 
         rgba(74, 43, 125, 0.9), 
         rgba(44, 31, 74, 0.9)
     );
     color: white;
     border-radius: 10px;
-    margin-bottom: 3rem;
-    border-bottom: 4px solid var(--secondary-color);
+    margin-bottom: 2rem;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(157, 78, 221, 0.3);
@@ -830,7 +829,7 @@ h3 {
     opacity: 1;
 }
 
-/* Добавляем ме��иа-запросы для адаптивности */
+/* Добавляем меиа-запросы для адаптивности */
 @media screen and (max-width: 1024px) {
   body {
     padding: 1rem;
@@ -1114,5 +1113,170 @@ h3 {
         padding: 8px 15px;
         border-radius: 25px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Обновляем стили для контейнера и отступов */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Обновляем стили для шапки */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, 
+        rgba(74, 43, 125, 0.9), 
+        rgba(44, 31, 74, 0.9)
+    );
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Обновляем медиа-запросы для iPhone и других мобильных устройств */
+@media screen and (max-width: 896px) { /* iPhone 11 и похожие */
+    body {
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    header {
+        border-radius: 0;
+        margin: 0;
+        padding: 1.5rem 1rem;
+    }
+
+    section {
+        border-radius: 10px;
+        margin: 1rem 0.5rem;
+        padding: 1.5rem;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin: 0.5rem 0;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Перемещаем навигацию наверх */
+    .floating-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: space-around;
+        background: rgba(44, 31, 74, 0.95);
+        padding: 8px 0;
+        border-radius: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav-item {
+        color: white;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-item.active {
+        background: rgba(157, 78, 221, 0.5);
+    }
+
+    /* Добавляем отступ сверху для контента */
+    .container {
+        margin-top: 60px;
+    }
+
+    /* Улучшаем отображение секций */
+    .skills-container,
+    .achievements-grid,
+    .testimonials-slider {
+        gap: 1rem;
+    }
+
+    .skill-category {
+        padding: 1rem;
+    }
+
+    .skill-icons {
+        justify-content: center;
+    }
+
+    /* Улучшаем отображение форм */
+    .contact-form {
+        padding: 0 0.5rem;
+    }
+
+    .input-field {
+        padding: 12px;
+        margin-bottom: 1rem;
+    }
+
+    .send-button {
+        width: 100%;
+    }
+}
+
+/* Дополнительные настройки для очень узких экранов */
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .nav-item {
+        width: 35px;
+        height: 35px;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Исправляем отступы для устройств с челкой (notch) */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .floating-nav {
+        padding-top: calc(env(safe-area-inset-top) + 8px);
+    }
+
+    .container {
+        margin-top: calc(60px + env(safe-area-inset-top));
     }
 }
