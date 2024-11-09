@@ -1280,3 +1280,29 @@ header {
         margin-top: calc(60px + env(safe-area-inset-top));
     }
 }
+
+/* Обновляем стили для навигации */
+@media screen and (max-width: 896px) { /* iPhone и другие мобильные */
+    .floating-nav {
+        display: none; /* Скрываем навигацию на мобильных */
+    }
+
+    /* Убираем отступ сверху, так как навигации больше нет */
+    .container {
+        margin-top: 0;
+    }
+
+    /* Обновляем стили шапки, так как нет навигации */
+    header {
+        border-radius: 0;
+        margin: 0;
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Удаляем ненужные стили для notch, так как навигации нет */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .container {
+        margin-top: 0;
+    }
+}
